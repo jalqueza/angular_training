@@ -58,4 +58,10 @@ export class DealerInventoryComponent {
   deleteVehicle(car:Vehicle) {
     this.inventory = this.inventory.filter(c => c.VIN != car.VIN)
   }
+
+  handlePhotoNavigation(photoIndex:number, car:Vehicle) {
+    if (photoIndex == car.photos.length - 1) {
+      alert("Come visit us in our showroom!")
+    }
+  }
 }
