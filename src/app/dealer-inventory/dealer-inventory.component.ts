@@ -64,4 +64,8 @@ export class DealerInventoryComponent {
       alert("Come visit us in our showroom!")
     }
   }
+
+  addVehicle(v:Vehicle) {
+    this.inventory.push(v)
+  }
 }
