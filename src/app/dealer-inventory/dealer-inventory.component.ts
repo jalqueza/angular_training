@@ -7,6 +7,17 @@ import { Vehicle } from '../vehicle'
   styleUrls: ['./dealer-inventory.component.css']
 })
 export class DealerInventoryComponent {
+  vehicleToEdit?:Vehicle
+  beginEditing(v:Vehicle) {
+    this.vehicleToEdit = v
+  }
+  
+  commitEdit(v:Vehicle) {
+    //Copy the edited data
+    Object.assign(this.vehicleToEdit!, v)
+  
+    this.vehicleToEdit = undefined
+  }
   inventory:Vehicle[] = [
     {
       VIN: "Y123",
