@@ -9,6 +9,8 @@ import { DataService, Book } from '../data.service'
 export class BookListComponent {
   constructor(private dataService: DataService)  {  }
   books:Book[] = []
+  page = 1; //Current page. Starts with 1
+pageSize = 4;
   ngOnInit() {
     this.dataService.getBooks().subscribe(bookList => {
         this.books = bookList
@@ -29,6 +31,10 @@ export class BookListComponent {
           alert(err)
         }
       })
+  }
+  getDisplayList() : Book[] {
+    return this.books.slice(
+      (this.page - 1) * this.pageSize, this.page * this.pageSize)
   }
 
 }
