@@ -11,9 +11,7 @@ export class EditBookComponent {
   constructor(private dataService: DataService,
     private activeRoute: ActivatedRoute,
     private router: Router)  {  }
-
     book!:Book
-
     ngOnInit() {
       this.activeRoute.paramMap.subscribe(params => {
         let isbn = params.get('isbn')!
@@ -23,7 +21,6 @@ export class EditBookComponent {
         })
       })
     }
-
     updateBook() {
       this.dataService.saveBook(this.book).subscribe(_ => {
         //Go back to the home page

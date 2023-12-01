@@ -10,7 +10,6 @@ import { Router } from '@angular/router'
 export class AddBookComponent {
   constructor(private dataService: DataService, private router: Router)  {  }
   book:Book = new Book
-
   addBook() {
     this.dataService.saveBook(this.book).subscribe(_ => {
       //Go back to the home page
